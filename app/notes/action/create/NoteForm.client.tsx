@@ -1,9 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import css from "./CreateNote.module.css";
-import NoteForm from "@/components/NoteForm/NoteForm";
+import CreateNoteForm from "@/components/NoteForm/CreateNoteForm";
 
-export default function CreateNoteClient() {
+export default function NoteForm() {
   const router = useRouter();
   const handleCancel = () => {
     router.push("/notes/filter/all");
@@ -12,7 +12,7 @@ export default function CreateNoteClient() {
     <main className={css.main}>
       <div className={css.container}>
         <h1 className={css.title}>Create note</h1>
-        <NoteForm onCancel={handleCancel} />
+        <CreateNoteForm onCancel={handleCancel} />
       </div>
     </main>
   );

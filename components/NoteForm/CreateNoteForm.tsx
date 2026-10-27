@@ -11,7 +11,7 @@ interface NoteFormProps {
   onCancel: () => void;
 }
 
-export default function NoteForm({ onCancel }: NoteFormProps) {
+export default function CreateNoteForm({ onCancel }: NoteFormProps) {
   const draftStore = useNoteDraft();
   const queryClient = useQueryClient();
 
