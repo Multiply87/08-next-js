@@ -5,14 +5,14 @@ import NoteForm from "@/components/NoteForm/NoteForm";
 
 export default function CreateNoteClient() {
   const router = useRouter();
-  const handleCencel = () => {
+  const handleCancel = () => {
     router.push("/notes/filter/all");
   };
   return (
     <main className={css.main}>
       <div className={css.container}>
         <h1 className={css.title}>Create note</h1>
-        <NoteForm onCancel={handleCencel} />
+        <NoteForm onCancel={handleCancel} />
       </div>
     </main>
   );

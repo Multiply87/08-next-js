@@ -34,7 +34,7 @@ export default function NoteForm({ onCancel }: NoteFormProps) {
     mutation.mutate(payload);
   };
 
-  const handeleChange = ({
+  const handleChange = ({
     target: { value, name },
   }: ChangeEvent<
     HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -52,7 +52,7 @@ export default function NoteForm({ onCancel }: NoteFormProps) {
           required
           className={css.input}
           value={draftStore.draft.title}
-          onChange={handeleChange}
+          onChange={handleChange}
         />
       </div>
 
@@ -63,7 +63,7 @@ export default function NoteForm({ onCancel }: NoteFormProps) {
           name="content"
           className={css.textarea}
           value={draftStore.draft.content}
-          onChange={handeleChange}
+          onChange={handleChange}
         />
       </div>
 
@@ -73,7 +73,7 @@ export default function NoteForm({ onCancel }: NoteFormProps) {
           id="tag"
           name="tag"
           value={draftStore.draft.tag}
-          onChange={handeleChange}
+          onChange={handleChange}
           className={css.select}
         >
           <option value="Todo">Todo</option>

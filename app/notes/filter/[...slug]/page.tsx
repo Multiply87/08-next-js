@@ -5,17 +5,13 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
+import type { Metadata } from "next";
 
 interface PageProps {
-  params: {
-    slug: string[];
-  };
+  params: Promise<{ slug: string[] }>;
 }
 
-export const generateMetadata = async ({
-  params,
-}: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
   const { slug } = await params;
   const tag = slug?.[0] === "all" ? "All notes" : slug?.[0] || "All notes";
 
@@ -25,7 +21,7 @@ export const generateMetadata = async ({
     openGraph: {
       title: `Note - ${tag}`,
       description: `Filtered note list by tag ${tag}`,
-      url: `https://08-next-js.vercel.app/notes/filter/${tag}`,
+      url: `https://study-rep-react-next-8.vercel.app/notes/filter/${tag}`,
       images: [
         {
           url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
