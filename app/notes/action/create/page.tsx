@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import CreateNoteClient from "./CreateNote.client";
+import NoteForm from "./NoteForm.client";
 
 export const metadata: Metadata = {
   title: "Create Note",
@@ -20,5 +20,5 @@ export const metadata: Metadata = {
 };
 
 export default function CreateNote() {
-  return <CreateNoteClient />;
+  return <NoteForm />;
 }
